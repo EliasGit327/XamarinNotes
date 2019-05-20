@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotesCrossPlatform.Views.EditNote"
+             Title="Edit/Read">
+    <ContentPage.Content>
+        
+        <StackLayout Orientation="Vertical">
+
+            <ScrollView Orientation="Vertical" Padding="10,10,10,10">
+                <Editor x:Name="editor" Text="" AutoSize="TextChanges"/>
+            </ScrollView>
+
+            <StackLayout BackgroundColor="LightGray" Orientation="Vertical" VerticalOptions="EndAndExpand" Padding="0,0,0,5">
+                <Button Clicked="Button_OnClicked" Text="Make a duplicate" BackgroundColor="Transparent"></Button>
+                <Label x:Name="dateLabel" Text="Date" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+  <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Memento" Clicked="mementoButton_Clicked"/>
+        <ToolbarItem Text="Save" Clicked="saveButton_Clicked" />
+
+  </ContentPage.ToolbarItems>
+  
+</ContentPage>

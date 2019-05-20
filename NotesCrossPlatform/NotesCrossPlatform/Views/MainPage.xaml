@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NotesCrossPlatform"
+             xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="NotesCrossPlatform.MainPage"
+             Title="Notes">
+
+    <StackLayout >
+        <!-- Place new controls here -->
+
+        <ListView x:Name="listView" ItemTapped="ListView_ItemTapped" RowHeight="70" >
+            <ListView.ItemTemplate>
+
+
+                <DataTemplate>
+
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Clicked="deleteMenuItem_Clicked" Text="Delete" IsDestructive="True" />
+                        </ViewCell.ContextActions>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Center" Padding="10, 0">
+
+                            <Label Text="{Binding Name}" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black"/>
+                            <Label Text="{Binding Date}" FontSize="Small"  VerticalTextAlignment="Center" TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                </DataTemplate>
+                
+                
+            </ListView.ItemTemplate>
+            
+            
+        </ListView>
+        
+    </StackLayout>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" Clicked="ToolbarItem_Settings"/>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Add"/>
+        
+    </ContentPage.ToolbarItems>
+
+</ContentPage>
